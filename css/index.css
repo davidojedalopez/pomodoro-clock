@@ -1,0 +1,93 @@
+body {
+  text-align: center;
+  background-color: gray;
+  font: 2em Helvetica, Serif; }
+
+.title {
+  font-family: Optima, Tahoma, Arial, Sans-serif; }
+
+span {
+  display: inline-block;
+  width: 6em;
+  position: relative;
+  width: 40px;
+  border: none;
+  /* background-color: transparent */ }
+
+label {
+  display: inline-block;
+  width: 6em;
+  margin-right: 0.5em;
+  padding-top: 1.5em; }
+
+.timings {
+  margin-top: 0.5em;
+  margin-bottom: 3em; }
+
+.controls {
+  display: inline;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px; }
+
+.banner {
+  border: 3px solid black;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin-top: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  background: #000;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  position: relative; }
+
+.banner .fill {
+  -webkit-transform: translateY(150px);
+  -webkit-animation-name: fillAction;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: cubic-bezier(0.2, 0.6, 0.8, 0.4);
+  -webkit-animation-duration: 10s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-delay: 0.25s; }
+
+.banner .pour {
+  width: 6px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3px;
+  bottom: 0;
+  top: 0;
+  background: #009ae6;
+  -webkit-animation-name: pourAction;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 0.25s; }
+
+.banner #waveShape {
+  -webkit-animation-name: waveAction;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-duration: 0.5s;
+  width: 0px;
+  height: 150px;
+  fill: #04ACFF; }
+
+@-webkit-keyframes pourAction {
+  0% {
+    -webkit-transform: translateY(-100%); }
+  100% {
+    -webkit-transform: translateY(0); } }
+@-webkit-keyframes fillAction {
+  0% {
+    -webkit-transform: translateY(150px); }
+  100% {
+    -webkit-transform: translateY(-5px); } }
+@-webkit-keyframes waveAction {
+  0% {
+    -webkit-transform: translate(-150px, 0); }
+  100% {
+    -webkit-transform: translate(0, 0); } }
+
+/*# sourceMappingURL=index.css.map */
