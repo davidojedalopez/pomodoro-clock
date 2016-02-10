@@ -4,16 +4,62 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Title Page</title>
-
+		<link rel="stylesheet" type="text/css" href="../css/index.css">
+		<title>Pomodoro Clock</title>
 
 	</head>
 	<body>
-		<h1 class="text-center">Hello World</h1>
 
+		<section class="title">Pomodoro Clock</section>
+
+		<section class="time-lengths">
+			<div class="controls break-length">
+				<label for="Break Length">Break Length
+					<button class="break-minus-button">-</button>
+					<span class="break-length-value">5</span>
+					<button class="break-plus-button">+</button>
+				</label>
+			</div><!-- controls break-length -->
+
+			<div class="controls break-length">
+				<label for="Work Length">Work Length
+					<button class="work-minus-button">-</button>
+					<span class="work-length-value">5</span>
+					<button class="work-plus-button">+</button>
+				</label>
+			</div><!-- controls break-length -->
+		</section><!-- time-lengths -->
+
+
+		<section class="pomodoro-animation">
+			<div class="banner">
+				<div class="pour hidden"></div>
+				<div class="fill hidden">
+					<svg version="1.1"
+					xlmns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					x="0px"
+					y="0px"
+					width="300px"
+					height="300px"
+					viewBox="0 0 300 300"
+					enable-background="new 0 0 300 300"
+					xml:space="preserve">
+			      		<path fill="#04ACFF" id="waveShape" d="M300,300V2.5c0,0-0.6-0.1-1.1-0.1c0,0-25.5-2.3-40.5-2.4c-15,0-40.6,2.4-40.6,2.4c-12.3,1.1-30.3,1.8-31.9,1.9c-2-0.1-19.7-0.8-32-1.9c0,0-25.8-2.3-40.8-2.4c-15,0-40.8,2.4-40.8,2.4c-12.3,1.1-30.4,1.8-32,1.9c-2-0.1-20-0.8-32.2-1.9c0,0-3.1-0.3-8.1-0.7V300H300z"></path>
+			    	</svg>
+				</div><!-- fill -->
+			</div><!-- banner -->
+		</section><!-- pomodoro-animation -->
+
+		<section class="control-flow">
+			<button class="start-button" onclick="startPomodoro()">Start</button>
+		</section>
+
+		<!-- js index file -->
+		<script src="../js/index.js"></script>
 		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
-		<!-- Bootstrap JavaScript -->
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<!-- LiveReload -->
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 	</body>
 </html>
