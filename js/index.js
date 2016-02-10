@@ -22,17 +22,15 @@ function startPomodoro(){
 function addWorkMinute(){
 
 	var workTime = parseInt($('.work-length-value').html());
-	console.log(workTime);
 
 	$('.work-length-value').html((workTime+1).toString());
-
 }
 
 function substractWorkMinute(){
 
 	var workTime = parseInt($('.work-length-value').html());
 
-	if(workTime > 0){
+	if(workTime > 1){
 		$('.work-length-value').html((workTime-1).toString());
 	}
 
