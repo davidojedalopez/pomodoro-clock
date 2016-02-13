@@ -9,7 +9,7 @@ function startPomodoro(){
 	var breakTime = parseInt($('.break-length-value').html());
 	var workTime = parseInt($('.work-length-value').html());
 
-	$('div.fill').css('webkit-animation-duration', workTime + "s");
+	$('.fill').css('webkit-animation-duration', workTime + "s");
 
 	var heading = $('div.pour').clone().removeClass();
     $('div.pour').remove();
@@ -26,7 +26,6 @@ function startPomodoro(){
 
     $('.fill').one('webkitAnimationEnd oanimationend oanimationEnd msAnimationEnd',
     	function(e) {
-    		console.log('end');
     		startBreakTime(breakTime);
     });
 
@@ -59,6 +58,7 @@ function startBreakTime(breakTime){
     $('div.pour').remove();
     $('div.banner').append(heading);
     heading.addClass('pour');
+    heading.addClass('hidden');
 
 	var heading = $('div.fill').clone().removeClass();
     $('div.fill').remove();
