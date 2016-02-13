@@ -1,3 +1,5 @@
+var paused = false;
+
 function startPomodoro(){
 
 	$('.pour').removeClass('hidden');
@@ -27,7 +29,20 @@ function startPomodoro(){
     pauseButton.removeClass('hidden');
 }
 
-function pausePomodoro(){
+function pauseContinuePomodoro(){
+
+	if(paused == true){
+		paused = false;
+		$('.pause-button').html("Pause");
+		$('.fill').css('webkit-animation-play-state', "running");
+		$('#waveShape').css('webkit-animation-play-state', "running");
+	} else{
+		paused = true;
+		$('.pause-button').html("Continue");
+		$('.fill').css('webkit-animation-play-state', "paused");
+		$('#waveShape').css('webkit-animation-play-state', "paused");
+	}
+
 
 }
 
@@ -39,6 +54,8 @@ function stopPomodoro(){
 	$('.pause-button').addClass('hidden');
 
 	$('.start-button').removeClass('hidden');
+
+
 
 }
 
