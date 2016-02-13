@@ -60,7 +60,8 @@ function stopPomodoro(){
 	$('.pause-button').addClass('hidden');
 
 	$('.start-button').removeClass('hidden');
-
+	paused = true;
+	pauseContinuePomodoro();
 
 }
 
