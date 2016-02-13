@@ -21,8 +21,12 @@ function startPomodoro(){
     $('div.banner').append(heading);
     heading.addClass('fill');
 
+    $('.fill').css('webkit-transform', 'translateY(150px)');
+    $('.fill').css('webkit-animation-name', "fillAction");
+
     $('.fill').one('webkitAnimationEnd oanimationend oanimationEnd msAnimationEnd',
     	function(e) {
+    		console.log('end');
     		startBreakTime(breakTime);
     });
 
@@ -48,9 +52,26 @@ function pauseContinuePomodoro(){
 		$('.fill').css('webkit-animation-play-state', "paused");
 		$('#waveShape').css('webkit-animation-play-state', "paused");
 	}
+}
+
+function startBreakTime(breakTime){
+	var heading = $('div.pour').clone().removeClass();
+    $('div.pour').remove();
+    $('div.banner').append(heading);
+    heading.addClass('pour');
+
+	var heading = $('div.fill').clone().removeClass();
+    $('div.fill').remove();
+    $('div.banner').append(heading);
+    heading.addClass('fill');
+    $('.fill').css('webkit-transform', 'translateY(-5px)');
+    $('.fill').css('webkit-animation-name', "emptyAction");
+
+
 
 
 }
+
 
 function stopPomodoro(){
 	$('.pour').addClass('hidden');
