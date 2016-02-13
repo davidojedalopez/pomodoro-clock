@@ -148,7 +148,7 @@ label
 }
 .hidden
 {
-    display: none;
+    display: none !important;
 }
 
 .break-minus-button,

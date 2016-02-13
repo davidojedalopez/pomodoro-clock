@@ -17,6 +17,14 @@ function startPomodoro(){
     $('div.fill').remove();
     $('div.banner').append(heading);
     heading.addClass('fill');
+
+    var startButton = $('.start-button');
+    startButton.addClass('hidden');
+
+    var stopButton = $('.stop-button')
+    stopButton.removeClass('hidden');
+    var pauseButton = $('.pause-button');
+    pauseButton.removeClass('hidden');
 }
 
 function addWorkMinute(){
