@@ -27,6 +27,21 @@ function startPomodoro(){
     pauseButton.removeClass('hidden');
 }
 
+function pausePomodoro(){
+
+}
+
+function stopPomodoro(){
+	$('.pour').addClass('hidden');
+	$('.fill').addClass('hidden');
+
+	$('.stop-button').addClass('hidden');
+	$('.pause-button').addClass('hidden');
+
+	$('.start-button').removeClass('hidden');
+
+}
+
 function addWorkMinute(){
 
 	var workTime = parseInt($('.work-length-value').html());
