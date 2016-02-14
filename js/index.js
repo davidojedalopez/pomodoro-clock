@@ -65,10 +65,15 @@ function startBreakTime(breakTime){
     $('div.banner').append(heading);
     heading.addClass('fill');
     $('.fill').css('webkit-transform', 'translateY(-5px)');
+    $('.fill').css('webkit-animation-duration', breakTime + "s")
     $('.fill').css('webkit-animation-name', "emptyAction");
 
-
-
+    $('.fill').one('webkitAnimationEnd oanimationend oanimationEnd msAnimationEnd',
+    	function(e) {
+    		$('.start-button').removeClass('hidden');
+    		$('.pause-button').addClass('hidden');
+    		$('.stop-button').addClass('hidden');
+    });
 
 }
 
@@ -93,12 +98,28 @@ function addWorkMinute(){
 	$('.work-length-value').html((workTime+1).toString());
 }
 
+function addBreakMinute(){
+
+	var breakTime = parseInt($('.break-length-value').html());
+
+	$('.break-length-value').html((breakTime+1).toString());
+}
+
 function substractWorkMinute(){
 
 	var workTime = parseInt($('.work-length-value').html());
 
 	if(workTime > 1){
 		$('.work-length-value').html((workTime-1).toString());
+	}
+}
+
+function substractBreakMinute(){
+
+	var breakTime = parseInt($('.break-length-value').html());
+
+	if(breakTime > 1){
+		$('.break-length-value').html((breakTime-1).toString());
 	}
 
 }
