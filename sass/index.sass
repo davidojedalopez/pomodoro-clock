@@ -1,5 +1,4 @@
-$title-font: Optima, Tahoma, Arial, Sans-serif
-$body-font: Helvetica, Serif
+$body-font: Indie Flower, Georgia, serif
 $background-color: gray
 $timing-size: 1em
 $label-size: 2em
@@ -10,7 +9,8 @@ body
 	font: 2em $body-font
 
 .title
-	font-family: $title-font
+	font-family: $body-font
+	font-size: 3em
 
 span
 	display: inline-block
@@ -18,20 +18,15 @@ span
 	position: relative
 	width: 40px
 	border: none
-	/* background-color: transparent */
 
 label
 	display: inline-block
 	width: 6em
 	margin-right: .5em
-	padding-top: 1.5em
-
-.timings
-	margin-top: .5em
-	margin-bottom: 3em
+	padding-top: .5em
 
 .controls
-	display: inline
+	display: inline-block
 	text-align: center
 	padding-left: 30px
 	padding-right: 30px
@@ -41,7 +36,6 @@ label
 	border-radius: 50%
 	width: 150px
 	height: 150px
-	margin-top: 1em
 	margin-left: auto
 	margin-right: auto
 	background: #000

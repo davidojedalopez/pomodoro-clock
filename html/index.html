@@ -8,7 +8,8 @@
 		<title>Pomodoro Clock</title>
 		<!-- Buttons core css -->
 		<link rel="stylesheet" href="../css/buttons.css">
-
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 
@@ -16,20 +17,20 @@
 
 		<section class="time-lengths">
 			<div class="controls break-length">
-				<label for="Break Length">Break Length
-					<button class="break-minus-button" onclick="substractBreakMinute()">-</button>
-					<span class="break-length-value">1</span>
-					<button class="break-plus-button" onclick="addBreakMinute()">+</button>
-				</label>
+				<label for="Break Length">Break Length</label><br>
+				<button class="break-minus-button" onclick="substractBreakMinute()">-</button>
+				<span class="break-length-value">1</span>
+				<button class="break-plus-button" onclick="addBreakMinute()">+</button>
+
 			</div><!-- controls break-length -->
 
-			<div class="controls break-length">
-				<label for="Work Length">Work Length
-					<button class="work-minus-button" onclick="substractWorkMinute()">-</button>
-					<span class="work-length-value">2</span>
-					<button class="work-plus-button" onclick="addWorkMinute()">+</button>
-				</label>
-			</div><!-- controls break-length -->
+			<div class="controls work-length">
+				<label for="Work Length">Work Length</label><br>
+				<button class="work-minus-button" onclick="substractWorkMinute()">-</button>
+				<span class="work-length-value">2</span>
+				<button class="work-plus-button" onclick="addWorkMinute()">+</button>
+
+			</div><!-- controls work-length -->
 		</section><!-- time-lengths -->
 
 
