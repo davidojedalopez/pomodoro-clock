@@ -9,7 +9,7 @@ function startPomodoro(){
 	var breakTime = parseInt($('.break-length-value').html());
 	var workTime = parseInt($('.work-length-value').html());
 
-	$('.fill').css('webkit-animation-duration', workTime + "s");
+	$('.fill').css('webkit-animation-duration', workTime * 60 + "s");
 
 	var heading = $('div.pour').clone().removeClass();
     $('div.pour').remove();
