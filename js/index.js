@@ -65,7 +65,7 @@ function startBreakTime(breakTime){
     $('div.banner').append(heading);
     heading.addClass('fill');
     $('.fill').css('webkit-transform', 'translateY(-5px)');
-    $('.fill').css('webkit-animation-duration', breakTime + "s")
+    $('.fill').css('webkit-animation-duration', breakTime * 60 + "s")
     $('.fill').css('webkit-animation-name', "emptyAction");
 
     $('.fill').one('webkitAnimationEnd oanimationend oanimationEnd msAnimationEnd',
