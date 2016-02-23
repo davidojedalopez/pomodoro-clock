@@ -9,6 +9,7 @@ module.exports = {
     path: __dirname + "/js",
     filename: "index.min.js"
   },
+  watch: true,
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),
