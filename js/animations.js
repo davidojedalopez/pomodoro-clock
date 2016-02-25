@@ -13,22 +13,17 @@ var animations = (function(){
 	var $buttons = $(".buttons");
 	var $startButton = $buttons.find(".start-button");
 	var $stopButton = $buttons.find(".stop-button");
-	var $pauseOrContinueButton = $buttons.find(".pause-button");
+	var $pauseContinueButton = $buttons.find(".pause-button");
 
 	var $breakTime = $(".break-length-value");
 	var $workTime = $(".work-length-value");
-
-	// bind events
-	$startButton.on("click", null, startPomodoro);
-	$stopButton.on("click", null, stopPomodoro);
-	$pauseOrContinueButton.on("click", null, pauseOrContinuePomodoro);
 
 	function startPomodoro(){
 
 		$pour.removeClass("hidden");
 		$fill.removeClass("hidden");
 
-		workTime = parseInt($workTime.html());
+		var workTime = parseInt($workTime.html());
 		$fill.css("webkit-animation-duration", workTime * 60 + "s");
 
 		var heading = $pomodoroAnimation.find("div.pour").clone().removeClass();
@@ -36,7 +31,7 @@ var animations = (function(){
 		$pomodoroAnimation.find("div.banner").append(heading);
 		heading.addClass("pour");
 
-		var heading = $pomodoroAnimation.find("div.fill").clone().removeClass();
+		heading = $pomodoroAnimation.find("div.fill").clone().removeClass();
 		$pomodoroAnimation.find("div.fill").remove();
 		$pomodoroAnimation.find("div.banner").append(heading);
 		heading.addClass("fill");
@@ -48,13 +43,13 @@ var animations = (function(){
 
 		$fill.one("webkitAnimationEnd oanimationend oanimationEnd msAnimationEnd",
 			function(event) {
-				breakTime = parseInt($breakTime.html());
+				var breakTime = parseInt($breakTime.html());
 				startBreakTime(breakTime);
 		});
 
 		$startButton.addClass("hidden");
 		$stopButton.removeClass("hidden");
-		$pauseOrContinueButton.removeClass("hidden");
+		$pauseContinueButton.removeClass("hidden");
 	}
 
 	function startBreakTime(breakTime){
@@ -79,7 +74,7 @@ var animations = (function(){
 		$fill.one("webkitAnimationEnd oanimationend oanimationEnd msAnimationEnd",
 			function(event) {
 				$startButton.removeClass("hidden");
-				$pauseOrContinueButton.addClass("hidden");
+				$pauseContinueButton.addClass("hidden");
 				$stopButton.addClass("hidden");
 		});
 	}
@@ -90,24 +85,30 @@ var animations = (function(){
 		$fill.addClass("hidden");
 
 		$stopButton.addClass("hidden");
-		$pauseOrContinueButton.addClass("hidden");
+		$pauseContinueButton.addClass("hidden");
 		$startButton.removeClass("hidden");
 	}
 
-	function pauseOrContinuePomodoro(){
-		$waveShape = $pomodoroAnimation.find("#waveShape");
+	function pauseContinuePomodoro(){
+		$waveShape = $pomodoroAnimation.find(".waveShape");
 
-		if(paused == true){
+		if(paused === true){
 			paused = false;
-			$pauseOrContinueButton.html("Pause");
+			$pauseContinueButton.html("Pause");
 			$fill.css("webkit-animation-play-state", "running");
 			$waveShape.css("webkit-animation-play-state", "running");
 		} else{
 			paused = true;
-			$pauseOrContinueButton.html("Continue");
+			$pauseContinueButton.html("Continue");
 			$fill.css("webkit-animation-play-state", "paused");
 			$waveShape.css("webkit-animation-play-state", "paused");
 		}
 	}
 
-})();
+	// bind events
+	$startButton.on("click", null, startPomodoro);
+	$stopButton.on("click", null, stopPomodoro);
+	$pauseContinueButton.on("click", null, pauseContinuePomodoro);
+
+
+}());

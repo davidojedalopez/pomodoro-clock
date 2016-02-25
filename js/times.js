@@ -13,6 +13,24 @@ var times = (function(){
 	var $workPlusButton = $timeSection.find(".work-plus-button");
 	var $workTime = $timeSection.find(".work-length-value");
 
+	function changeTime(event){
+		var timeType = event.data.timeType;
+		var plusOrMinus = event.data.plusOrMinus;
+
+		if(timeType === "work"){
+			var workTimeValue = parseInt($workTime.html());
+			if(!(workTimeValue === 0 && plusOrMinus === "-")){
+				$workTime.html(eval($workTime.html() + plusOrMinus + "1").toString());
+			}
+		}
+		else{
+			var breakTimeValue = parseInt($breakTime.html());
+			if(!(breakTimeValue === 0 && plusOrMinus === "-")){
+				$breakTime.html(eval($breakTime.html() + plusOrMinus + "1").toString());
+			}
+		}
+	}
+
 	// bind events
 	$breakMinusButton.on("click",
 						{timeType: "break", plusOrMinus: "-"},
@@ -28,22 +46,4 @@ var times = (function(){
 						{timeType: "work", plusOrMinus: "+"},
 						changeTime);
 
-	function changeTime(event){
-		var timeType = event.data.timeType;
-		var plusOrMinus = event.data.plusOrMinus;
-
-		if(timeType == "work"){
-			var workTimeValue = parseInt($workTime.html());
-			if(!(workTimeValue == 0 && plusOrMinus == "-")){
-				$workTime.html(eval($workTime.html() + plusOrMinus + "1").toString());
-			}
-		}
-		else{
-			var breakTimeValue = parseInt($breakTime.html());
-			if(!(breakTimeValue == 0 && plusOrMinus == "-")){
-				$breakTime.html(eval($breakTime.html() + plusOrMinus + "1").toString());
-			}
-		}
-	}
-
-})();
+}());
