@@ -69,7 +69,7 @@ var animations = (function(){
 		var breakTime = parseInt($breakTime.html());
 		$fill.one("webkitAnimationEnd oanimationend oanimationEnd msAnimationEnd",
 			function(){
-				startBreakTime(breakTime)
+				startBreakTime(breakTime);
 			});
 
 		$startButton.addClass("hidden");
