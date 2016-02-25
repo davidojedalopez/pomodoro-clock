@@ -34,13 +34,15 @@ var times = (function(){
 
 		if(timeType == "work"){
 			var workTimeValue = parseInt($workTime.html());
-			if(!(workTimeValue == 0 && plusOrMinus == "-"))
+			if(!(workTimeValue == 0 && plusOrMinus == "-")){
 				$workTime.html(eval($workTime.html() + plusOrMinus + "1").toString());
+			}
 		}
 		else{
 			var breakTimeValue = parseInt($breakTime.html());
-			if(!(breakTimeValue == 0 && plusOrMinus == "-"))
+			if(!(breakTimeValue == 0 && plusOrMinus == "-")){
 				$breakTime.html(eval($breakTime.html() + plusOrMinus + "1").toString());
+			}
 		}
 	}
 
