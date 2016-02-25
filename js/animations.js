@@ -19,7 +19,6 @@ var animations = (function(){
 	var $workTime = $(".work-length-value");
 
 	function startBreakTime(breakTime){
-
 		var heading = $pomodoroAnimation.find("div.pour").clone().removeClass();
 		$pomodoroAnimation.find("div.pour").remove();
 		$pomodoroAnimation.find("div.banner").append(heading);
@@ -46,7 +45,6 @@ var animations = (function(){
 	}
 
 	function startPomodoro(){
-
 		$pour.removeClass("hidden");
 		$fill.removeClass("hidden");
 
@@ -70,7 +68,9 @@ var animations = (function(){
 
 		var breakTime = parseInt($breakTime.html());
 		$fill.one("webkitAnimationEnd oanimationend oanimationEnd msAnimationEnd",
-			startBreakTime(breakTime));
+			function(){
+				startBreakTime(breakTime)
+			});
 
 		$startButton.addClass("hidden");
 		$stopButton.removeClass("hidden");
