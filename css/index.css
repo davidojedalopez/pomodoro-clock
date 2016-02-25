@@ -9,9 +9,8 @@ body {
 
 span {
   display: inline-block;
-  width: 6em;
-  position: relative;
   width: 40px;
+  position: relative;
   border: none; }
 
 label {
@@ -37,6 +36,10 @@ label {
   overflow: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
+  -ms-backface-visibility: hidden;
+  -ms-transform: translate3d(0, 0, 0);
+  -moz-backface-visibility: hidden;
+  -moz-transform: translate3d(0, 0, 0);
   position: relative; }
   .banner .fill {
     -webkit-transform: translateY(150px);
@@ -90,9 +93,8 @@ label {
     -moz-animation-iteration-count: infinite;
     -moz-animation-timing-function: linear;
     -moz-animation-duration: 0.5s;
-    width: 0px;
-    height: 150px;
-    fill: #04ACFF; }
+    width: 0;
+    height: 150px; }
 
 @-webkit-keyframes pourAction {
   0% {

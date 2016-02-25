@@ -14,9 +14,8 @@ body
 
 span
 	display: inline-block
-	width: 6em
-	position: relative
 	width: 40px
+	position: relative
 	border: none
 
 label
@@ -42,6 +41,10 @@ label
 	overflow: hidden
 	-webkit-backface-visibility: hidden
 	-webkit-transform: translate3d(0, 0, 0)
+	-ms-backface-visibility: hidden
+	-ms-transform: translate3d(0, 0, 0)
+	-moz-backface-visibility: hidden
+	-moz-transform: translate3d(0, 0, 0)
 	position: relative
 
 	& .fill
@@ -106,9 +109,8 @@ label
 		-moz-animation-timing-function: linear
 		-moz-animation-duration: 0.5s
 
-		width: 00px
+		width: 0
 		height: 150px
-		fill: #04ACFF
 
 // TODO: Add Sass mixins to support other browsers
 
