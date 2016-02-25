@@ -53,6 +53,22 @@ label
 		-webkit-animation-fill-mode: forwards
 		-webkit-animation-delay: .25s
 
+		-ms-transform: translateY(150px)
+		-ms-animation-name: fillAction
+		-ms-animation-iteration-count: 1
+		-ms-animation-timing-function: cubic-bezier(.2, .6, .8, .4)
+		-ms-animation-duration: 10s
+		-ms-animation-fill-mode: forwards
+		-ms-animation-delay: .25s
+
+		-moz-transform: translateY(150px)
+		-moz-animation-name: fillAction
+		-moz-animation-iteration-count: 1
+		-moz-animation-timing-function: cubic-bezier(.2, .6, .8, .4)
+		-moz-animation-duration: 10s
+		-moz-animation-fill-mode: forwards
+		-moz-animation-delay: .25s
+
 	& .pour
 		width: 6px
 		position: absolute
@@ -65,14 +81,36 @@ label
 		-webkit-animation-timing-function: linear
 		-webkit-animation-duration: 0.25s
 
+		-ms-animation-name: pourAction
+		-ms-animation-timing-function: linear
+		-ms-animation-duration: 0.25s
+
+		-moz-animation-name: pourAction
+		-moz-animation-timing-function: linear
+		-moz-animation-duration: 0.25s
+
+
 	& .waveShape
 		-webkit-animation-name: waveAction
 		-webkit-animation-iteration-count: infinite
 		-webkit-animation-timing-function: linear
 		-webkit-animation-duration: 0.5s
+
+		-ms-animation-name: waveAction
+		-ms-animation-iteration-count: infinite
+		-ms-animation-timing-function: linear
+		-ms-animation-duration: 0.5s
+
+		-moz-animation-name: waveAction
+		-moz-animation-iteration-count: infinite
+		-moz-animation-timing-function: linear
+		-moz-animation-duration: 0.5s
+
 		width: 00px
 		height: 150px
 		fill: #04ACFF
+
+// TODO: Add Sass mixins to support other browsers
 
 @-webkit-keyframes pourAction
 	0%

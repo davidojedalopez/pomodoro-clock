@@ -60,7 +60,7 @@ var animations = (function(){
 		heading.addClass("pour");
 		heading.addClass("hidden");
 
-		var heading = $pomodoroAnimation.find("div.fill").clone().removeClass();
+		heading = $pomodoroAnimation.find("div.fill").clone().removeClass();
 		$pomodoroAnimation.find("div.fill").remove();
 		$pomodoroAnimation.find("div.banner").append(heading);
 		heading.addClass("fill");
