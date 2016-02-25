@@ -1,2 +1,2 @@
-require('./times.js');
-require('./animations.js');
+require("./times.js");
+require("./animations.js");
